@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Ozgeshe — кафе в Астане</title>
+<meta name="robots" content="noindex,nofollow">
+<meta name="theme-color" content="#0f4a3c">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Philosopher:wght@400;700&family=Manrope:wght@400;500;600;700&display=swap">
+<style>
+/* Layout: their emerald-and-gold brand; an emerald hero with a gold koshkar-muiz ornament line, then a cream menu page; two 3490 ₸ offers are the hook */
+:root{
+  --emerald:#0f4a3c; --emerald-2:#0a382d; --gold:#c9a45c; --gold-2:#e3c88e; --cream:#f6f1e6; --paper:#fffcf5; --ink:#1f2a26; --muted:#66706b; --line:#e2d9c6;
+  --display:"Philosopher",Georgia,serif; --text:"Manrope",system-ui,sans-serif;
+  --ease:cubic-bezier(0.23,1,0.32,1);
+}
+*{box-sizing:border-box}
+html{touch-action:manipulation;scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--cream);color:var(--ink);font:17px/1.6 var(--text);-webkit-tap-highlight-color:transparent}
+a{color:inherit}
+a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:6px}
+.wrap{max-width:1060px;margin:0 auto;padding-inline:24px}
+
+.demo{background:var(--emerald-2);color:var(--gold-2);font-size:13px;text-align:center;padding:7px 16px}
+
+.hero{background:var(--emerald);color:var(--cream)}
+header.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:18px}
+.brand{text-decoration:none;font:700 26px/1 var(--display);letter-spacing:.14em;color:var(--cream)}
+.brand small{display:block;font:600 10px var(--text);letter-spacing:.34em;color:var(--gold);margin-top:5px}
+nav{display:flex;gap:26px;font-size:15px}
+nav a{text-decoration:none;color:#b9cdc5}
+nav a:hover{color:#fff}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font:700 15px var(--text);text-decoration:none;padding:13px 24px;border-radius:999px;border:1.5px solid var(--gold);transition:transform 160ms var(--ease),background-color 160ms ease,color 160ms ease}
+.btn:active{transform:scale(.97)}
+.btn-gold{background:var(--gold);color:var(--emerald-2)}
+.btn-gold:hover{background:var(--gold-2)}
+.btn-line{background:transparent;color:inherit}
+.btn-line:hover{background:rgba(201,164,92,.14)}
+
+.hero .body{padding-block:48px 72px}
+.kz{font:400 18px var(--display);color:var(--gold);margin:0 0 12px}
+.hero h1{font:700 clamp(48px,9vw,108px)/.95 var(--display);margin:0;letter-spacing:.03em}
+.hero p{max-width:42ch;color:#c7d8d1;margin:22px 0 30px;font-size:18px}
+.cta{display:flex;flex-wrap:wrap;gap:12px}
+.badges{display:flex;flex-wrap:wrap;gap:10px;margin-top:34px}
+.badge{border:1px solid rgba(201,164,92,.55);color:var(--gold-2);border-radius:999px;padding:7px 16px;font-size:14px;font-weight:600}
+
+/* koshkar-muiz-like ornament: repeating curls drawn with radial gradients */
+.ornament{height:26px;background:
+  radial-gradient(circle at 13px 26px,transparent 9px,var(--gold) 10px,var(--gold) 12px,transparent 13px) 0 0/26px 26px repeat-x,
+  radial-gradient(circle at 0 0,transparent 9px,var(--gold) 10px,var(--gold) 12px,transparent 13px) 0 0/26px 26px repeat-x;opacity:.9}
+
+.offers{padding-block:64px 0}
+.offers .grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+.offer{background:var(--paper);border:1px solid var(--line);border-radius:24px;padding:30px;display:flex;flex-direction:column;gap:8px}
+.offer .price{font:700 44px/1 var(--display);color:var(--emerald)}
+.offer h2{font:700 26px var(--display);margin:0}
+.offer p{margin:0;color:var(--muted)}
+
+section{padding-block:72px}
+h2.big{font:700 clamp(36px,5vw,54px)/1 var(--display);margin:0 0 10px;color:var(--emerald)}
+.sub{color:var(--muted);margin:0 0 28px;max-width:58ch}
+
+.tabs{display:flex;gap:8px;overflow-x:auto;padding-bottom:4px;margin-bottom:28px;scrollbar-width:none}
+.tabs::-webkit-scrollbar{display:none}
+.tab{flex:none;background:transparent;border:1.5px solid var(--line);color:var(--muted);font:600 15px var(--text);padding:9px 16px;border-radius:999px;cursor:pointer;transition:background-color 160ms ease,color 160ms ease,border-color 160ms ease}
+.tab:hover{color:var(--ink);border-color:var(--emerald)}
+.tab[aria-selected="true"]{background:var(--emerald);border-color:var(--emerald);color:var(--cream)}
+
+.items{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 52px}
+.it{display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding-block:13px;border-bottom:1px solid var(--line)}
+.it span{flex:1;min-width:0}
+.it span small{display:block;color:var(--muted);font-size:14px}
+.it b{font-weight:700;white-space:nowrap;font-variant-numeric:tabular-nums;color:var(--emerald)}
+
+.banquet{background:var(--emerald);color:var(--cream)}
+.banquet .wrap{display:grid;grid-template-columns:minmax(0,1.4fr) auto;gap:32px;align-items:center}
+.banquet h2{font:700 clamp(32px,4.4vw,48px)/1.05 var(--display);margin:0 0 10px;color:var(--gold-2)}
+.banquet p{margin:0;color:#c7d8d1;max-width:50ch}
+
+.visit .grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px;margin-bottom:32px}
+.visit h3{font:700 14px var(--text);letter-spacing:.16em;text-transform:uppercase;color:var(--gold);margin:0 0 8px}
+.visit p{margin:0}
+.visit .btn-line{color:var(--emerald);border-color:var(--emerald)}
+
+footer{border-top:1px solid var(--line);padding-block:28px;color:var(--muted);font-size:14px}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
+
+@media (max-width:760px){
+  nav{display:none}
+  .offers .grid,.items,.visit .grid,.banquet .wrap{grid-template-columns:1fr}
+  section{padding-block:56px}
+  .hero .body{padding-block:32px 56px}
+}
+</style></head>
+<body>
+
+<div class="demo">Демо-концепт сайта от Pixel Studio · не официальный сайт кафе</div>
+
+<div class="hero">
+  <header class="top"><div class="wrap">
+    <a class="brand" href="#">OZGESHE<small>КАФЕ · АСТАНА</small></a>
+    <nav><a href="#menu">Меню</a><a href="#banquet">Банкеты</a><a href="#visit">Как найти</a></nav>
+    <a class="btn btn-gold" href="https://wa.me/77088063994" target="_blank" rel="noopener">WhatsApp</a>
+  </div></header>
+  <div class="wrap body">
+    <p class="kz">Өзгеше — значит особенный</p>
+    <h1>Ozgeshe</h1>
+    <p>Завтраки, бизнес-ланчи и казахская кухня на Туран, 34Б. Бешбармак, кеспе, куырдак и баурсаки рядом с кофе и чизкейками.</p>
+    <div class="cta">
+      <a class="btn btn-gold" href="#menu">Смотреть меню</a>
+      <a class="btn btn-line" href="#visit">Как нас найти</a>
+    </div>
+    <div class="badges"><span class="badge">Халяль</span><span class="badge">0% обслуживание</span><span class="badge">Ежедневно 09:00–22:00</span><span class="badge">4,8 в 2ГИС</span></div>
+  </div>
+  <div class="ornament" aria-hidden="true"></div>
+</div>
+
+<main>
+  <div class="offers"><div class="wrap"><div class="grid">
+    <article class="offer"><span class="price">3 490 ₸</span><h2>Комбо-завтрак</h2><p>Завтрак с напитком по одной цене. Состав комбо уточните у официанта.</p></article>
+    <article class="offer"><span class="price">3 490 ₸</span><h2>Бизнес-ланч</h2><p>Комплексный обед в будни. Меню ланча меняется, спросите в WhatsApp.</p></article>
+  </div></div></div>
+
+  <section id="menu"><div class="wrap">
+    <h2 class="big">Меню</h2>
+    <p class="sub">Цены в тенге. Обслуживание 0%.</p>
+    <div class="tabs" role="tablist" id="tabs"></div>
+    <div class="items" id="items" aria-live="polite"></div>
+  </div></section>
+
+  <section class="banquet" id="banquet"><div class="wrap">
+    <div><h2>Банкеты и праздники</h2><p>Дни рождения, семейные праздники и корпоративы в Ozgeshe. Напишите дату и количество гостей, и вам подберут меню.</p></div>
+    <a class="btn btn-gold" href="https://wa.me/77088063994?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%A5%D0%BE%D1%87%D1%83%20%D1%83%D0%B7%D0%BD%D0%B0%D1%82%D1%8C%20%D0%BF%D1%80%D0%BE%20%D0%B1%D0%B0%D0%BD%D0%BA%D0%B5%D1%82." target="_blank" rel="noopener">Обсудить банкет</a>
+  </div></section>
+
+  <section class="visit" id="visit"><div class="wrap">
+    <h2 class="big">Как нас найти</h2>
+    <div class="grid">
+      <div><h3>Адрес</h3><p>Астана, Нура район,<br>проспект Туран, 34Б, возле 5 подъезда</p></div>
+      <div><h3>Часы</h3><p>Ежедневно<br>09:00–22:00</p></div>
+      <div><h3>Телефон</h3><p>+7 708 806 39 94</p></div>
+    </div>
+    <div class="cta">
+      <a class="btn btn-gold" href="https://wa.me/77088063994" target="_blank" rel="noopener">Написать в WhatsApp</a>
+      <a class="btn btn-line" href="https://2gis.kz/astana/firm/70000001095527974" target="_blank" rel="noopener">Открыть в 2ГИС</a>
+    </div>
+  </div></section>
+</main>
+
+<footer><div class="wrap">
+  <span>Ozgeshe · кафе · Астана</span>
+  <a href="https://www.instagram.com/ozgeshe.coffee/" target="_blank" rel="noopener">Instagram</a>
+</div></footer>
+
+<script>
+// [name, price, note]; price may be "a / b" for sizes
+const MENU = [
+  { id: "breakfast", title: "Завтраки", items: [
+    ["Казахский завтрак", 4190], ["Американский завтрак", 3790], ["Драники с лососем и яйцом", 3990], ["Гранола с йогуртом и семенами чиа", 3590],
+    ["Бельгийские вафли с мороженым", 3500], ["Сытный завтрак", 3190], ["Английский завтрак", 3190], ["Сырники с лесными ягодами", 2950],
+    ["Сырники с бананом в карамельном соусе", 2890], ["Шакшука с яйцом пашот и казы", 2890], ["Шакшука", 2190],
+    ["Каша с тары и сухофруктами", 1590], ["Овсяная каша", 1350], ["Рисовая каша", 1350] ] },
+  { id: "hot", title: "Горячие блюда", items: [
+    ["Бешбармак", 3790], ["Кесе куырдак", 3890], ["Манты", 2890], ["Бефстроганов с пюре", 3890], ["Котлеты Ozgeshe", 3300],
+    ["Стейк из куриного филе с булгуром", 4190], ["Шницель", 4590], ["Паста с курицей", 3390], ["Паста с сёмгой", 3790],
+    ["Казах фастфуд", "2990 / 3590", "Багет с томлёной говядиной · с мозговой косточкой"], ["Жареная картошка с грибами", 2890],
+    ["Фри", 1190, "гарнир"], ["Рис", 990, "гарнир"], ["Пюре", 990, "гарнир"] ] },
+  { id: "soups", title: "Супы", items: [
+    ["Кеспе из конины", 1890], ["Кеспе из курицы", 1790], ["Пельмени", 1890], ["Рамен с курицей", 2290], ["Рамен с говядиной", 2390],
+    ["Сырный рамен", 3490], ["Том-ям", 4490], ["Суп-пюре из чечевицы", 1590] ] },
+  { id: "salads", title: "Салаты и боулы", items: [
+    ["Цезарь с курицей", 2290], ["Цезарь с казы", 2690], ["Цезарь с сёмгой", 3090], ["Оливье с говядиной", 2690], ["Салат с хрустящими баклажанами", 2690],
+    ["Греческий салат", 2790], ["Салат со свёклой и рукколой", 2290, "в медово-горчичном соусе"], ["Боул с куриным филе", 3590], ["Боул с сёмгой", 4190] ] },
+  { id: "pizza", title: "Пицца", items: [["Маргарита", 2590], ["Пепперони", 2890], ["Курица с грибами", 2890], ["Сырная", 3300]] },
+  { id: "bakery", title: "Выпечка и десерты", items: [
+    ["Баурсаки со сметаной (балқаймақ)", 1290, "7 шт"], ["Баурсаки", 790, "7 шт"], ["Ханский десерт", 4190], ["Чебуреки", 1950],
+    ["Чизкейк с тары", 1890], ["Чизкейки: рафаэлло, фисташка, сникерс, шоколадный, испанский", 1790],
+    ["Круассан с курицей", 1390], ["Круассан с сёмгой", 1550], ["Панини с курицей", 1550], ["Панини с сёмгой", 1750] ] },
+  { id: "coffee", title: "Кофе", items: [
+    ["Американо", "900 / 1000 / 1100", "250 / 350 / 450 мл"], ["Капучино", "990 / 1090 / 1190", "250 / 350 / 450 мл"], ["Латте", "1090 / 1190", "350 / 450 мл"],
+    ["Флэт уайт", 1090, "250 мл"], ["Раф", "1390 / 1490", "350 / 450 мл"], ["Эспрессо", "900 / 1000", "30 / 60 мл"],
+    ["Тары кофе", "1350 / 1450", "350 / 450 мл"], ["Мокачино", "990 / 1190", "350 / 450 мл"],
+    ["Авторский раф: мандариновое печенье, апельсиновый пломбир, панакота с вишней, цветущий персик", 1390, "350 мл"],
+    ["Айс латте, айс капучино, айс американо", 1250, "450 мл"], ["Бамбл, эспрессо-тоник, фраппучино", 1450, "450 мл"] ] },
+  { id: "tea", title: "Чай", items: [
+    ["Чёрный или зелёный", "400 / 1340", "350 мл / 1 л"], ["Чай с молоком", "450 / 1440", "350 мл / 1 л"], ["Чай с тары", "800 / 1950", "350 мл / 1 л"],
+    ["Ташкентский", "800 / 1640", "350 мл / 1 л"], ["Марокканский, ягодный, имбирный, клюквенный, облепиховый, глинтвейн", "800 / 1840", "350 мл / 1 л"],
+    ["Чай карак", 1250], ["Матча: зелёная, голубая, розовая", 1090, "350 мл"], ["Matcha cream: малиновое суфле, бергамот", 990] ] },
+  { id: "cold", title: "Холодные напитки", items: [
+    ["Лимонады: киви-лайм, манго-маракуйя, цитрусовый, ягодный, мохито, фейхоа-клубника, блю кюрасао", 1290, "450 мл"],
+    ["Ice tea: ягодный, имбирный, ташкентский, манго-маракуйя, апельсиновый", 990, "450 мл"], ["Ice матча: голубая, зелёная, розовая", 1250, "450 мл"],
+    ["Милкшейки: ванильный, клубничный, шоколадный, банановый", 1390], ["Какао", "1090 / 1190", "350 / 450 мл"], ["Горячий шоколад", "1190 / 1290", "350 / 450 мл"] ] },
+];
+const fmt = new Intl.NumberFormat("ru-RU");
+const price = p => typeof p === "string" ? p.split(" / ").map(n => fmt.format(+n)).join(" / ") : fmt.format(p);
+const tabs = document.getElementById("tabs"), box = document.getElementById("items");
+function show(id) {
+  const cat = MENU.find(c => c.id === id) || MENU[0];
+  tabs.querySelectorAll(".tab").forEach(b => b.setAttribute("aria-selected", b.dataset.id === cat.id));
+  box.innerHTML = cat.items.map(([n, p, s]) => `<div class="it"><span>${n}${s ? `<small>${s}</small>` : ""}</span><b>${price(p)} ₸</b></div>`).join("");
+}
+MENU.forEach(c => {
+  const b = document.createElement("button");
+  b.className = "tab"; b.type = "button"; b.role = "tab"; b.dataset.id = c.id; b.textContent = c.title;
+  b.addEventListener("click", () => show(c.id));
+  tabs.appendChild(b);
+});
+show("breakfast");
+</script>
+</body></html>
